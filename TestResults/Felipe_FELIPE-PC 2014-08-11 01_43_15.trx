@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="09732d45-cc76-4ee3-b3b1-3260be85b5a4" name="Felipe@FELIPE-PC 2014-08-11 01:43:15" runUser="Felipe-PC\Felipe" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="2ed88fbc-3fd5-425a-b5d5-ad63174ec68b">
+    <Deployment runDeploymentRoot="Felipe_FELIPE-PC 2014-08-11 01_43_15">
+      <DeploymentItem filename="C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Debug\EnglishSchoolManagerModel.dll" />
+      <DeploymentItem filename="C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Debug\EnglishSchoolManagerRules.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2014-08-11T01:43:15.0232377-03:00" queuing="2014-08-11T01:43:17.1753608-03:00" start="2014-08-11T01:43:17.3403703-03:00" finish="2014-08-11T01:43:59.0957585-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="FELIPE-PC" outcome="Error" timestamp="2014-08-11T01:43:59.0947585-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Salvar_UsuarioNulo" storage="c:\users\felipe\documents\visual studio 2010\projects\englishschoolmanager\englishschoolmanagertest\bin\debug\englishschoolmanagertest.dll" id="7f7424ec-3a34-da99-a0d4-f9804ee6f812">
+      <Execution id="eb22e54b-a4bb-4911-b5c8-36cf4721e92a" />
+      <TestMethod codeBase="C:/Users/Felipe/Documents/Visual Studio 2010/Projects/EnglishSchoolManager/EnglishSchoolManagerTest/bin/Debug/EnglishSchoolManagerTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="EnglishSchoolManagerTest.Acesso.UsuarioRNTest, EnglishSchoolManagerTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Salvar_UsuarioNulo" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="7f7424ec-3a34-da99-a0d4-f9804ee6f812" executionId="eb22e54b-a4bb-4911-b5c8-36cf4721e92a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="eb22e54b-a4bb-4911-b5c8-36cf4721e92a" testId="7f7424ec-3a34-da99-a0d4-f9804ee6f812" testName="Salvar_UsuarioNulo" computerName="FELIPE-PC" duration="00:00:41.5503765" startTime="2014-08-11T01:43:17.5453820-03:00" endTime="2014-08-11T01:43:59.0957585-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb22e54b-a4bb-4911-b5c8-36cf4721e92a">
+    </UnitTestResult>
+  </Results>
+</TestRun>

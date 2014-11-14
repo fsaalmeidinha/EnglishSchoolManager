@@ -1,0 +1,13 @@
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities.mdf
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities.sdf
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities_log.ldf
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.dll.config
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.xml

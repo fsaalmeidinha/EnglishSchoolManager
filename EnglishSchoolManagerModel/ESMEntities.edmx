@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EnglishSchoolManagerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EnglishSchoolManagerModelStoreContainer">
+          <EntitySet Name="tblAula" EntityType="EnglishSchoolManagerModel.Store.tblAula" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUsuario" EntityType="EnglishSchoolManagerModel.Store.tblUsuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="EnglishSchoolManagerModel.Store.FK__tblUsuari__AulaI__32E0915F">
+            <End Role="tblAula" EntitySet="tblAula" />
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="nvarchar" MaxLength="500" />
+          <Property Name="HorariosJson" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Particular" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInsercaoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioAlteracaoId" Type="int" Nullable="false" />
+          <Property Name="DataInsercao" Type="datetime" Nullable="false" />
+          <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
+          <Property Name="ValorMensalidade" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Senha" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NivelAcesso" Type="int" Nullable="false" />
+          <Property Name="Telefone" Type="varchar" MaxLength="25" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioInsercaoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioAlteracaoId" Type="int" Nullable="false" />
+          <Property Name="DataInsercao" Type="datetime" Nullable="false" />
+          <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
+          <Property Name="AulaId" Type="int" />
+        </EntityType>
+        <Association Name="FK__tblUsuari__AulaI__32E0915F">
+          <End Role="tblAula" Type="EnglishSchoolManagerModel.Store.tblAula" Multiplicity="0..1" />
+          <End Role="tblUsuario" Type="EnglishSchoolManagerModel.Store.tblUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAula">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblUsuario">
+              <PropertyRef Name="AulaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnglishSchoolManagerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ESMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Usuarios" EntityType="EnglishSchoolManagerModel.Usuario" />
+          <EntitySet Name="Aulas" EntityType="EnglishSchoolManagerModel.Aula" />
+          <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F">
+            <End Role="Aula" EntitySet="Aulas" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Senha" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NivelAcesso" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
+          <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
+          <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+          <Property Type="String" Name="Telefone" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Ativo" Nullable="false" />
+          <Property Type="Int32" Name="AulaId" />
+          <NavigationProperty Name="Aula" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Usuario" ToRole="Aula" />
+        </EntityType>
+        <EntityType Name="Aula">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descricao" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HorariosJson" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Particular" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
+          <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
+          <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+          <NavigationProperty Name="Alunos" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Aula" ToRole="Usuario" />
+          <Property Type="Decimal" Name="ValorMensalidade" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <Association Name="FK__tblUsuari__AulaI__32E0915F">
+          <End Type="EnglishSchoolManagerModel.Aula" Role="Aula" Multiplicity="0..1" />
+          <End Type="EnglishSchoolManagerModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aula">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="AulaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnglishSchoolManagerModelStoreContainer" CdmEntityContainer="ESMEntities">
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
+              <MappingFragment StoreEntitySet="tblUsuario">
+                <ScalarProperty Name="AulaId" ColumnName="AulaId" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+                <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+                <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+                <ScalarProperty Name="NivelAcesso" ColumnName="NivelAcesso" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aulas">
+            <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Aula">
+              <MappingFragment StoreEntitySet="tblAula">
+                <ScalarProperty Name="ValorMensalidade" ColumnName="ValorMensalidade" />
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+                <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+                <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+                <ScalarProperty Name="Particular" ColumnName="Particular" />
+                <ScalarProperty Name="HorariosJson" ColumnName="HorariosJson" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ESMEntities">
+        <EntityTypeShape EntityType="EnglishSchoolManagerModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="EnglishSchoolManagerModel.Aula" Width="1.5" PointX="3.375" PointY="0.75" Height="1.7879850260416674" />
+        <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" >
+          <ConnectorPoint PointX="3.375" PointY="2.12474609375" />
+          <ConnectorPoint PointX="2.25" PointY="2.12474609375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

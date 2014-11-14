@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnglishSchoolManagerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ESMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Usuarios" EntityType="EnglishSchoolManagerModel.Usuario" />
+    <EntitySet Name="Aulas" EntityType="EnglishSchoolManagerModel.Aula" />
+    <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F">
+      <End Role="Aula" EntitySet="Aulas" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Senha" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="NivelAcesso" Nullable="false" />
+    <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
+    <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
+    <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
+    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+    <Property Type="String" Name="Telefone" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Ativo" Nullable="false" />
+    <Property Type="Int32" Name="AulaId" />
+    <NavigationProperty Name="Aula" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Usuario" ToRole="Aula" />
+  </EntityType>
+  <EntityType Name="Aula">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descricao" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HorariosJson" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Particular" Nullable="false" />
+    <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
+    <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
+    <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
+    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+    <NavigationProperty Name="Alunos" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Aula" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK__tblUsuari__AulaI__32E0915F">
+    <End Type="EnglishSchoolManagerModel.Aula" Role="Aula" Multiplicity="0..1" />
+    <End Type="EnglishSchoolManagerModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aula">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="AulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

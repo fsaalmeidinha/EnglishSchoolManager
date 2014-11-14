@@ -1,0 +1,6 @@
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.xml

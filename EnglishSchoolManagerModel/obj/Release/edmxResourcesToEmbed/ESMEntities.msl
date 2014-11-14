@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnglishSchoolManagerModelStoreContainer" CdmEntityContainer="ESMEntities">
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
+        <MappingFragment StoreEntitySet="tblUsuario">
+          <ScalarProperty Name="AulaId" ColumnName="AulaId" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+          <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+          <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+          <ScalarProperty Name="NivelAcesso" ColumnName="NivelAcesso" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aulas">
+      <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Aula">
+        <MappingFragment StoreEntitySet="tblAula">
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+          <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+          <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="HorariosJson" ColumnName="HorariosJson" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,35 @@
+GO
+CREATE TABLE [dbo].[tblUsuario](
+    [Id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    [Nome] [NVARCHAR](100) NOT NULL,
+    [Email] [NVARCHAR](100) NOT NULL,
+    [Senha] [NVARCHAR](50) NOT NULL,
+    [NivelAcesso] [INT] NOT NULL,
+    [Telefone] [VARCHAR](25) NULL,
+    [Ativo] [BIT] NOT NULL,
+    [UsuarioInsercaoId] [INT] NOT NULL,
+    [UsuarioAlteracaoId] [INT] NOT NULL,
+    [DataInsercao] [DATETIME] NOT NULL,
+    [DataAlteracao] [DATETIME] NOT NULL
+);
+
+GO
+CREATE TABLE [dbo].[tblAula](
+    [Id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    [Descricao] [NVARCHAR](500) NULL,
+    [HorariosJson] [NVARCHAR](1000) NULL,
+    [Particular] [BIT] NOT NULL,
+    [UsuarioInsercaoId] [INT] NOT NULL,
+    [UsuarioAlteracaoId] [INT] NOT NULL,
+    [DataInsercao] [DATETIME] NOT NULL,
+    [DataAlteracao] [DATETIME] NOT NULL
+);
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ADD [AulaId] INT NULL,
+    FOREIGN KEY (AulaId) REFERENCES [dbo].[tblAula](Id)
+
+GO
+ALTER TABLE tblAula
+ADD ValorMensalidade MONEY NOT NULL DEFAULT(0);

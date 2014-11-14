@@ -1,0 +1,4 @@
+C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMRN\bin\Debug\ESMRN.dll
+C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMRN\bin\Debug\ESMRN.pdb
+C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMRN\obj\Debug\ESMRN.dll
+C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMRN\obj\Debug\ESMRN.pdb

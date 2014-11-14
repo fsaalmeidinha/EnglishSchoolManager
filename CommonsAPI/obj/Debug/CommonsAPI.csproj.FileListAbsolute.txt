@@ -1,0 +1,11 @@
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EsbocoEnglishManager\CommonsAPI\bin\Debug\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EsbocoEnglishManager\CommonsAPI\bin\Debug\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EsbocoEnglishManager\CommonsAPI\obj\Debug\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EsbocoEnglishManager\CommonsAPI\obj\Debug\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.pdb
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.csprojResolveAssemblyReference.cache
