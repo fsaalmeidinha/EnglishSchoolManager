@@ -27,7 +27,7 @@
     </Imports>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManager\rcf\Debug\ESMWebContent\" />
+        <SourceDirectory path="D:\!job\EnglishSchoolManager\EnglishSchoolManager\rcf\Debug\ESMWebContent\" />
       </Content>
     </Contents>
   </WebRole>

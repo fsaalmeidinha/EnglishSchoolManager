@@ -9,3 +9,10 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Commo
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.pdb

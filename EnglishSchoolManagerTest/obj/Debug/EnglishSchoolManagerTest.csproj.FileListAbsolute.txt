@@ -30,3 +30,20 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Engli
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerTest\obj\Debug\EnglishSchoolManagerTest.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\ESMEntities.mdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\ESMEntities.sdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerTest.dll.config
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerTest.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerTest.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\EnglishSchoolManagerRules.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\bin\Debug\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\obj\Debug\EnglishSchoolManagerTest.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\obj\Debug\EnglishSchoolManagerTest.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerTest\obj\Debug\EnglishSchoolManagerTest.pdb

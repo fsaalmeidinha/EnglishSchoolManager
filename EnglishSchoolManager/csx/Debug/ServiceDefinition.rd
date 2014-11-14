@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EnglishSchoolManager" generation="1" functional="0" release="0" Id="e1848d2b-9d74-4d7b-b234-a1a89ef25b06" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EnglishSchoolManager" generation="1" functional="0" release="0" Id="45dd0fb8-b64c-462f-8516-752366c137a1" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="EnglishSchoolManagerGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -117,7 +117,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="ESMWeb" generation="1" functional="0" release="0" software="C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManager\csx\Debug\roles\ESMWeb" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="768" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
+          <role name="ESMWeb" generation="1" functional="0" release="0" software="D:\!job\EnglishSchoolManager\EnglishSchoolManager\csx\Debug\roles\ESMWeb" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="768" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Endpoint1" protocol="http" portRanges="80" />
               <inPort name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" protocol="tcp" />
@@ -167,14 +167,14 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="8a6f7ab1-196a-4125-abe3-4f5f16e68e1b" ref="Microsoft.RedDog.Contract\ServiceContract\EnglishSchoolManagerContract@ServiceDefinition">
+    <implementation Id="632ba43e-0afe-47dc-b6b1-401d5782e305" ref="Microsoft.RedDog.Contract\ServiceContract\EnglishSchoolManagerContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="8c14c86e-9d32-49cd-9595-6ddd18c8b538" ref="Microsoft.RedDog.Contract\Interface\ESMWeb:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="7fbff6d7-bc94-4c53-8500-ffaac140948d" ref="Microsoft.RedDog.Contract\Interface\ESMWeb:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/EnglishSchoolManager/EnglishSchoolManagerGroup/ESMWeb:Endpoint1" />
           </inPort>
         </interfaceReference>
-        <interfaceReference Id="86bd5410-bdfe-42b6-b6ce-542dc57c7f2d" ref="Microsoft.RedDog.Contract\Interface\ESMWeb:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput@ServiceDefinition">
+        <interfaceReference Id="cf8ad36e-c06b-4c52-bceb-e0c1c47f3626" ref="Microsoft.RedDog.Contract\Interface\ESMWeb:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/EnglishSchoolManager/EnglishSchoolManagerGroup/ESMWeb:Microsoft.WindowsAzure.Plugins.RemoteForwarder.RdpInput" />
           </inPort>

@@ -17,3 +17,22 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Engli
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Newtonsoft.Json.xml
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\System.Web.Providers.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\bin\Debug\ServiceConfiguration.cscfg
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\bin\Debug\ServiceDefinition.csdef
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\EnglishSchoolManagerRules.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\ESMEntities.mdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\ESMEntities.sdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\ESMWeb.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\ESMWeb.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.StorageUtility.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManager\obj\Debug\ESMWeb\bin\System.Web.Providers.dll
