@@ -46,7 +46,6 @@ namespace ESMWeb.cadastros
 
             lbAlunos.DataSource = alunos;
             lbAlunos.DataBind();
-
         }
 
         private void carregarAula()
@@ -61,11 +60,19 @@ namespace ESMWeb.cadastros
                     txtValor.Text = aula.ValorMensalidade.ToString("N2");
                     txtDescricao.Text = aula.Descricao;
                     cbParticular.Checked = aula.Particular;
-                    hdnHorariosAula.Value = aula.HorariosJson;
+                    hdnHorariosAula.Value = recuperarHorariosJSON(aula);
                     List<int> idsAlunos = aula.Alunos.Select(aluno => aluno.Id).ToList();
                     lbAlunos.Items.OfType<ListItem>().ToList().ForEach(itemAluno => { if (idsAlunos.Contains(Convert.ToInt32(itemAluno.Value))) itemAluno.Selected = true; });
                 }
             }
+        }
+
+        private string recuperarHorariosJSON(Aula aula)
+        {
+            List<HorarioAulaCadastroAula> horariosAulaCadastro = aula.GetHorariosAula()
+                .Select(horarioAula => new HorarioAulaCadastroAula(horarioAula.DiaSemanaId, horarioAula.HorarioInicio, horarioAula.HorarioFim)).ToList();
+
+            return JavaScriptSerializerHelper.Serialize(horariosAulaCadastro);
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -111,7 +118,14 @@ namespace ESMWeb.cadastros
 
         private void preencherHorariosAula(Aula aulaSalvar)
         {
-            List<HorarioAula> horariosAula = JavaScriptSerializerHelper.Deserialize<List<HorarioAula>>(hdnHorariosAula.Value);
+            List<HorarioAulaCadastroAula> horariosAulaCadastro = JavaScriptSerializerHelper.Deserialize<List<HorarioAulaCadastroAula>>(hdnHorariosAula.Value);
+            List<HorarioAula> horariosAula = horariosAulaCadastro.Select(horarioCadastro =>
+                new HorarioAula()
+                {
+                    DiaSemanaId = horarioCadastro.DiaSemanaId,
+                    HorarioInicio = new DateTime(2000, 01, 01, Convert.ToInt32(horarioCadastro.HoraInicial), Convert.ToInt32(horarioCadastro.MinutoInicial), 0),
+                    HorarioFim = new DateTime(2000, 01, 01, Convert.ToInt32(horarioCadastro.HoraFinal), Convert.ToInt32(horarioCadastro.MinutoFinal), 0)
+                }).ToList();
             aulaSalvar.SetHorariosAula(horariosAula);
         }
 
@@ -128,6 +142,29 @@ namespace ESMWeb.cadastros
                 rptErros.Visible = true;
                 rptErros.Focus();
             }
+        }
+
+        protected class HorarioAulaCadastroAula
+        {
+            public HorarioAulaCadastroAula()
+            {
+
+            }
+
+            public HorarioAulaCadastroAula(int diaSemanaId, DateTime horarioInicio, DateTime horarioFim)
+            {
+                this.DiaSemanaId = diaSemanaId;
+                this.HoraInicial = horarioInicio.Hour.ToString().PadLeft(2, '0');
+                this.MinutoInicial = horarioInicio.Minute.ToString().PadLeft(2, '0');
+                this.HoraFinal = horarioFim.Hour.ToString().PadLeft(2, '0');
+                this.MinutoFinal = horarioFim.Minute.ToString().PadLeft(2, '0');
+            }
+
+            public int DiaSemanaId { get; set; }
+            public string HoraInicial { get; set; }
+            public string MinutoInicial { get; set; }
+            public string HoraFinal { get; set; }
+            public string MinutoFinal { get; set; }
         }
     }
 }

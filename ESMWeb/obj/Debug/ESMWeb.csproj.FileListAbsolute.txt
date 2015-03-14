@@ -38,3 +38,4 @@ D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
 D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.csprojResolveAssemblyReference.cache
 D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.dll
 D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.pdb
+D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll.config

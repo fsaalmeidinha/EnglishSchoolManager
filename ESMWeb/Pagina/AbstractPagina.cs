@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EnglishSchoolManagerModel;
+using EnglishSchoolManagerModel.Enumerador;
 
 namespace ESMWeb.Endereco
 {
@@ -30,6 +31,13 @@ namespace ESMWeb.Endereco
                 URLSistema = URLSistema.Replace(Request.UrlReferrer.Query, "");
             }
             return URLSistema;
+        }
+
+        public void RedirecionarParaPaginaPrincipal()
+        {
+            string url = "~/Index/ManagerIndex.aspx";
+
+            HttpContext.Current.Response.Redirect(url);
         }
     }
 }

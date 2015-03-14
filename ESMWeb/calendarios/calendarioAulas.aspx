@@ -113,8 +113,8 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('#tblHorariosAulas').dataTable();
-            $('#tblLegendaAulas').dataTable();
+            jQuery('#tblHorariosAulas').dataTable();
+            jQuery('#tblLegendaAulas').dataTable();
         });
 
         function openClass(classId) {

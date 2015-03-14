@@ -100,7 +100,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('#dataTables-example').dataTable();
+            jQuery('#dataTables-example').dataTable();
         });
     </script>
 </asp:Content>
