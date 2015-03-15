@@ -11,7 +11,7 @@ namespace ESMWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            spanNomeEscola.InnerText = Autenticacao.Autenticacao.RecuperarUsuarioAutenticado().Escola.Nome;
         }
     }
 }

@@ -20,6 +20,8 @@ using System.Xml.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("EnglishSchoolManagerModel", "FK__tblUsuari__AulaI__32E0915F", "Aula", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EnglishSchoolManagerModel.Aula), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EnglishSchoolManagerModel.Usuario), true)]
+[assembly: EdmRelationshipAttribute("EnglishSchoolManagerModel", "FK__tblAula__EscolaI__4AB81AF0", "tblEscola", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EnglishSchoolManagerModel.Escola), "Aula", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EnglishSchoolManagerModel.Aula), true)]
+[assembly: EdmRelationshipAttribute("EnglishSchoolManagerModel", "FK__tblUsuari__Escol__49C3F6B7", "tblEscola", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EnglishSchoolManagerModel.Escola), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EnglishSchoolManagerModel.Usuario), true)]
 
 #endregion
 
@@ -102,6 +104,22 @@ namespace EnglishSchoolManagerModel
             }
         }
         private ObjectSet<Aula> _Aulas;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Escola> Escolas
+        {
+            get
+            {
+                if ((_Escolas == null))
+                {
+                    _Escolas = base.CreateObjectSet<Escola>("Escolas");
+                }
+                return _Escolas;
+            }
+        }
+        private ObjectSet<Escola> _Escolas;
 
         #endregion
 
@@ -121,6 +139,14 @@ namespace EnglishSchoolManagerModel
         public void AddToAulas(Aula aula)
         {
             base.AddObject("Aulas", aula);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Escolas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToEscolas(Escola escola)
+        {
+            base.AddObject("Escolas", escola);
         }
 
         #endregion
@@ -151,7 +177,8 @@ namespace EnglishSchoolManagerModel
         /// <param name="dataInsercao">Initial value of the DataInsercao property.</param>
         /// <param name="dataAlteracao">Initial value of the DataAlteracao property.</param>
         /// <param name="valorMensalidade">Initial value of the ValorMensalidade property.</param>
-        public static Aula CreateAula(global::System.Int32 id, global::System.Boolean particular, global::System.Int32 usuarioInsercaoId, global::System.Int32 usuarioAlteracaoId, global::System.DateTime dataInsercao, global::System.DateTime dataAlteracao, global::System.Decimal valorMensalidade)
+        /// <param name="escolaId">Initial value of the EscolaId property.</param>
+        public static Aula CreateAula(global::System.Int32 id, global::System.Boolean particular, global::System.Int32 usuarioInsercaoId, global::System.Int32 usuarioAlteracaoId, global::System.DateTime dataInsercao, global::System.DateTime dataAlteracao, global::System.Decimal valorMensalidade, global::System.Int32 escolaId)
         {
             Aula aula = new Aula();
             aula.Id = id;
@@ -161,6 +188,7 @@ namespace EnglishSchoolManagerModel
             aula.DataInsercao = dataInsercao;
             aula.DataAlteracao = dataAlteracao;
             aula.ValorMensalidade = valorMensalidade;
+            aula.EscolaId = escolaId;
             return aula;
         }
 
@@ -386,6 +414,30 @@ namespace EnglishSchoolManagerModel
         private global::System.Decimal _ValorMensalidade;
         partial void OnValorMensalidadeChanging(global::System.Decimal value);
         partial void OnValorMensalidadeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EscolaId
+        {
+            get
+            {
+                return _EscolaId;
+            }
+            set
+            {
+                OnEscolaIdChanging(value);
+                ReportPropertyChanging("EscolaId");
+                _EscolaId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EscolaId");
+                OnEscolaIdChanged();
+            }
+        }
+        private global::System.Int32 _EscolaId;
+        partial void OnEscolaIdChanging(global::System.Int32 value);
+        partial void OnEscolaIdChanged();
 
         #endregion
 
@@ -410,6 +462,201 @@ namespace EnglishSchoolManagerModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F", "Usuario", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EnglishSchoolManagerModel", "FK__tblAula__EscolaI__4AB81AF0", "tblEscola")]
+        public Escola Escola
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "tblEscola").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "tblEscola").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Escola> EscolaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "tblEscola");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "tblEscola", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="EnglishSchoolManagerModel", Name="Escola")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Escola : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Escola object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="nome">Initial value of the Nome property.</param>
+        /// <param name="ativo">Initial value of the Ativo property.</param>
+        public static Escola CreateEscola(global::System.Int32 id, global::System.String nome, global::System.Boolean ativo)
+        {
+            Escola escola = new Escola();
+            escola.Id = id;
+            escola.Nome = nome;
+            escola.Ativo = ativo;
+            return escola;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Nome
+        {
+            get
+            {
+                return _Nome;
+            }
+            set
+            {
+                OnNomeChanging(value);
+                ReportPropertyChanging("Nome");
+                _Nome = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Nome");
+                OnNomeChanged();
+            }
+        }
+        private global::System.String _Nome;
+        partial void OnNomeChanging(global::System.String value);
+        partial void OnNomeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean Ativo
+        {
+            get
+            {
+                return _Ativo;
+            }
+            set
+            {
+                OnAtivoChanging(value);
+                ReportPropertyChanging("Ativo");
+                _Ativo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Ativo");
+                OnAtivoChanged();
+            }
+        }
+        private global::System.Boolean _Ativo;
+        partial void OnAtivoChanging(global::System.Boolean value);
+        partial void OnAtivoChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EnglishSchoolManagerModel", "FK__tblAula__EscolaI__4AB81AF0", "Aula")]
+        public EntityCollection<Aula> Aulas
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Aula>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "Aula");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Aula>("EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0", "Aula", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EnglishSchoolManagerModel", "FK__tblUsuari__Escol__49C3F6B7", "Usuario")]
+        public EntityCollection<Usuario> Usuarios
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Usuario>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "Usuario");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "Usuario", value);
                 }
             }
         }
@@ -441,7 +688,10 @@ namespace EnglishSchoolManagerModel
         /// <param name="dataInsercao">Initial value of the DataInsercao property.</param>
         /// <param name="dataAlteracao">Initial value of the DataAlteracao property.</param>
         /// <param name="ativo">Initial value of the Ativo property.</param>
-        public static Usuario CreateUsuario(global::System.Int32 id, global::System.String nome, global::System.String email, global::System.String senha, global::System.Int32 nivelAcesso, global::System.Int32 usuarioInsercaoId, global::System.Int32 usuarioAlteracaoId, global::System.DateTime dataInsercao, global::System.DateTime dataAlteracao, global::System.Boolean ativo)
+        /// <param name="escolaId">Initial value of the EscolaId property.</param>
+        /// <param name="valorMensalidade">Initial value of the ValorMensalidade property.</param>
+        /// <param name="valorPersonalizado">Initial value of the ValorPersonalizado property.</param>
+        public static Usuario CreateUsuario(global::System.Int32 id, global::System.String nome, global::System.String email, global::System.String senha, global::System.Int32 nivelAcesso, global::System.Int32 usuarioInsercaoId, global::System.Int32 usuarioAlteracaoId, global::System.DateTime dataInsercao, global::System.DateTime dataAlteracao, global::System.Boolean ativo, global::System.Int32 escolaId, global::System.Decimal valorMensalidade, global::System.Boolean valorPersonalizado)
         {
             Usuario usuario = new Usuario();
             usuario.Id = id;
@@ -454,6 +704,9 @@ namespace EnglishSchoolManagerModel
             usuario.DataInsercao = dataInsercao;
             usuario.DataAlteracao = dataAlteracao;
             usuario.Ativo = ativo;
+            usuario.EscolaId = escolaId;
+            usuario.ValorMensalidade = valorMensalidade;
+            usuario.ValorPersonalizado = valorPersonalizado;
             return usuario;
         }
 
@@ -751,6 +1004,78 @@ namespace EnglishSchoolManagerModel
         private Nullable<global::System.Int32> _AulaId;
         partial void OnAulaIdChanging(Nullable<global::System.Int32> value);
         partial void OnAulaIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EscolaId
+        {
+            get
+            {
+                return _EscolaId;
+            }
+            set
+            {
+                OnEscolaIdChanging(value);
+                ReportPropertyChanging("EscolaId");
+                _EscolaId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EscolaId");
+                OnEscolaIdChanged();
+            }
+        }
+        private global::System.Int32 _EscolaId;
+        partial void OnEscolaIdChanging(global::System.Int32 value);
+        partial void OnEscolaIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal ValorMensalidade
+        {
+            get
+            {
+                return _ValorMensalidade;
+            }
+            set
+            {
+                OnValorMensalidadeChanging(value);
+                ReportPropertyChanging("ValorMensalidade");
+                _ValorMensalidade = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ValorMensalidade");
+                OnValorMensalidadeChanged();
+            }
+        }
+        private global::System.Decimal _ValorMensalidade;
+        partial void OnValorMensalidadeChanging(global::System.Decimal value);
+        partial void OnValorMensalidadeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ValorPersonalizado
+        {
+            get
+            {
+                return _ValorPersonalizado;
+            }
+            set
+            {
+                OnValorPersonalizadoChanging(value);
+                ReportPropertyChanging("ValorPersonalizado");
+                _ValorPersonalizado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ValorPersonalizado");
+                OnValorPersonalizadoChanged();
+            }
+        }
+        private global::System.Boolean _ValorPersonalizado;
+        partial void OnValorPersonalizadoChanging(global::System.Boolean value);
+        partial void OnValorPersonalizadoChanged();
 
         #endregion
 
@@ -791,6 +1116,44 @@ namespace EnglishSchoolManagerModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Aula>("EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F", "Aula", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("EnglishSchoolManagerModel", "FK__tblUsuari__Escol__49C3F6B7", "tblEscola")]
+        public Escola Escola
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "tblEscola").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "tblEscola").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Escola> EscolaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "tblEscola");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Escola>("EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7", "tblEscola", value);
                 }
             }
         }

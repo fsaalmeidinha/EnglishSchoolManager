@@ -142,7 +142,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -186,7 +188,6 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AcessoHelper\UsuarioAtivoHelper.cs" />
     <Compile Include="Autenticacao\Autenticacao.cs" />
     <Compile Include="Autenticacao\UsuarioAutenticacao.cs" />
     <Compile Include="Autenticacao\WindowsFormsAuthentication.cs" />
@@ -272,9 +273,7 @@
     </Compile>
     <Compile Include="WebRole.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

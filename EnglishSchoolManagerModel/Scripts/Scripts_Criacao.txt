@@ -33,3 +33,50 @@ ADD [AulaId] INT NULL,
 GO
 ALTER TABLE tblAula
 ADD ValorMensalidade MONEY NOT NULL DEFAULT(0);
+
+
+GO
+CREATE TABLE [dbo].[tblEscola](
+    [Id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+    [Nome] [NVARCHAR](200) NOT NULL,
+    [Ativo] [BIT] NOT NULL
+);
+
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ADD [EscolaId] INT NULL,
+    FOREIGN KEY (EscolaId) REFERENCES [dbo].[tblEscola](Id);
+
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ADD [EscolaId] INT NULL,
+    FOREIGN KEY (EscolaId) REFERENCES [dbo].[tblEscola](Id);
+
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ALTER COLUMN [EscolaId] INT NOT NULL;
+
+
+
+GO
+ALTER TABLE [dbo].[tblAula]
+ADD [EscolaId] INT NULL,
+    FOREIGN KEY (EscolaId) REFERENCES [dbo].[tblEscola](Id);
+
+
+GO
+ALTER TABLE [dbo].[tblAula]
+ALTER COLUMN [EscolaId] INT NOT NULL;
+
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ADD [ValorMensalidade] MONEY NOT NULL DEFAULT(0);
+
+
+GO
+ALTER TABLE [dbo].[tblUsuario]
+ADD [ValorPersonalizado] BIT NOT NULL DEFAULT(0);

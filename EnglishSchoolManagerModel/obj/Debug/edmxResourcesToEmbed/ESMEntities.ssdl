@@ -1,18 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EnglishSchoolManagerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="EnglishSchoolManagerModelStoreContainer">
-    <EntitySet Name="tblAula" EntityType="EnglishSchoolManagerModel.Store.tblAula" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblUsuario" EntityType="EnglishSchoolManagerModel.Store.tblUsuario" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="EnglishSchoolManagerModel.Store.FK__tblUsuari__AulaI__32E0915F">
-      <End Role="tblAula" EntitySet="tblAula" />
-      <End Role="tblUsuario" EntitySet="tblUsuario" />
-    </AssociationSet>
-  </EntityContainer>
+<Schema Namespace="EnglishSchoolManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityType Name="tblAula">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descricao" Type="nvarchar" MaxLength="500" />
     <Property Name="HorariosJson" Type="nvarchar" MaxLength="1000" />
     <Property Name="Particular" Type="bit" Nullable="false" />
@@ -21,15 +13,24 @@
     <Property Name="DataInsercao" Type="datetime" Nullable="false" />
     <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
     <Property Name="ValorMensalidade" Type="money" Nullable="false" />
+    <Property Name="EscolaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEscola">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="tblUsuario">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="Senha" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NivelAcesso" Type="int" Nullable="false" />
     <Property Name="Telefone" Type="varchar" MaxLength="25" />
     <Property Name="Ativo" Type="bit" Nullable="false" />
@@ -38,10 +39,25 @@
     <Property Name="DataInsercao" Type="datetime" Nullable="false" />
     <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
     <Property Name="AulaId" Type="int" />
+    <Property Name="EscolaId" Type="int" Nullable="false" />
+    <Property Name="ValorMensalidade" Type="money" Nullable="false" />
+    <Property Name="ValorPersonalizado" Type="bit" Nullable="false" />
   </EntityType>
+  <Association Name="FK__tblAula__EscolaI__4AB81AF0">
+    <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
+    <End Role="tblAula" Type="Self.tblAula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEscola">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblAula">
+        <PropertyRef Name="EscolaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__tblUsuari__AulaI__32E0915F">
-    <End Role="tblAula" Type="EnglishSchoolManagerModel.Store.tblAula" Multiplicity="0..1" />
-    <End Role="tblUsuario" Type="EnglishSchoolManagerModel.Store.tblUsuario" Multiplicity="*" />
+    <End Role="tblAula" Type="Self.tblAula" Multiplicity="0..1" />
+    <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblAula">
         <PropertyRef Name="Id" />
@@ -51,4 +67,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__tblUsuari__Escol__49C3F6B7">
+    <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
+    <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEscola">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUsuario">
+        <PropertyRef Name="EscolaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EnglishSchoolManagerModelStoreContainer">
+    <EntitySet Name="tblAula" EntityType="Self.tblAula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEscola" EntityType="Self.tblEscola" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblAula__EscolaI__4AB81AF0" Association="Self.FK__tblAula__EscolaI__4AB81AF0">
+      <End Role="tblEscola" EntitySet="tblEscola" />
+      <End Role="tblAula" EntitySet="tblAula" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="Self.FK__tblUsuari__AulaI__32E0915F">
+      <End Role="tblAula" EntitySet="tblAula" />
+      <End Role="tblUsuario" EntitySet="tblUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsuari__Escol__49C3F6B7" Association="Self.FK__tblUsuari__Escol__49C3F6B7">
+      <End Role="tblEscola" EntitySet="tblEscola" />
+      <End Role="tblUsuario" EntitySet="tblUsuario" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

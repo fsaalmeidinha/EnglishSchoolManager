@@ -4,6 +4,9 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
         <MappingFragment StoreEntitySet="tblUsuario">
+          <ScalarProperty Name="ValorPersonalizado" ColumnName="ValorPersonalizado" />
+          <ScalarProperty Name="ValorMensalidade" ColumnName="ValorMensalidade" />
+          <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />
           <ScalarProperty Name="AulaId" ColumnName="AulaId" />
           <ScalarProperty Name="Ativo" ColumnName="Ativo" />
           <ScalarProperty Name="Telefone" ColumnName="Telefone" />
@@ -22,6 +25,7 @@
     <EntitySetMapping Name="Aulas">
       <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Aula">
         <MappingFragment StoreEntitySet="tblAula">
+          <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />
           <ScalarProperty Name="ValorMensalidade" ColumnName="ValorMensalidade" />
           <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
           <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
@@ -30,6 +34,15 @@
           <ScalarProperty Name="Particular" ColumnName="Particular" />
           <ScalarProperty Name="HorariosJson" ColumnName="HorariosJson" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Escolas">
+      <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Escola">
+        <MappingFragment StoreEntitySet="tblEscola">
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

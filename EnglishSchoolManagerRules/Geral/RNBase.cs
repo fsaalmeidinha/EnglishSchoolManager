@@ -46,13 +46,23 @@ namespace EnglishSchoolManagerRules.Geral
             var entityKey = new EntityKey(containerName + "." + setName, "Id", id);
             object entidade = null;
             contexto.TryGetObjectByKey(entityKey, out entidade);
+
+            if (entidade != null)
+            {
+                int escolaId = Convert.ToInt32(entidade.GetType().GetProperty("EscolaId").GetValue(entidade, null));
+                if (usuarioAtivo.EscolaId != escolaId)
+                {
+                    entidade = null;
+                }
+            }
+
             return entidade as Entidade;
         }
 
-        public List<Entidade> Listar()
-        {
-            return contexto.CreateObjectSet<Entidade>().ToList();
-        }
+        //public List<Entidade> Listar()
+        //{
+        //    return contexto.CreateObjectSet<Entidade>().ToList();
+        //}
 
         public Resultado Salvar(Entidade entidade)
         {
@@ -67,6 +77,7 @@ namespace EnglishSchoolManagerRules.Geral
                     Entidade entidadeSalvar = new Entidade();
 
                     PropertiesHelper.CopyProperties(entidade, entidadeSalvar);
+                    entidadeSalvar.GetType().GetProperty("EscolaId").SetValue(entidadeSalvar, usuarioAtivo.EscolaId, null);
                     entidadeSalvar.GetType().GetProperty("UsuarioAlteracaoId").SetValue(entidadeSalvar, usuarioAtivo.Id, null);
                     entidadeSalvar.GetType().GetProperty("DataAlteracao").SetValue(entidadeSalvar, DateTime.UtcNow, null);
                     if (idEntidade == 0)

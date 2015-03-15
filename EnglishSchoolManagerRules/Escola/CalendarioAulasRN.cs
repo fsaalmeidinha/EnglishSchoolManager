@@ -35,7 +35,7 @@ namespace EnglishSchoolManagerRules.Escola
         {
             CalendarioAulas calendarioAulas = new CalendarioAulas();
 
-            List<Aula> aulas = contexto.Aulas.ToList();
+            List<Aula> aulas = contexto.Aulas.Where(aula => aula.EscolaId == usuarioAtivo.EscolaId).ToList();
             foreach (Aula aula in aulas)
             {
                 foreach (HorarioAula horarioAula in aula.GetHorariosAula())

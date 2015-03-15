@@ -32,7 +32,7 @@ namespace ESMWeb.calendarios
 
         private void carregarHorariosAulas()
         {
-            CalendarioAulas calendarioAulas = new CalendarioAulasRN(AcessoHelper.UsuarioAtivoHelper.RecuperarUsuarioAtivo()).RecuperarCalendarioAulas();
+            CalendarioAulas calendarioAulas = new CalendarioAulasRN(Autenticacao.Autenticacao.RecuperarUsuarioAutenticado()).RecuperarCalendarioAulas();
             List<InfoAulaPorHorario> infosAulaPorHorario = new List<InfoAulaPorHorario>();
             int totalMinutosInicioAula = totalMinutosInicial;
             while (totalMinutosInicioAula <= totalMinutosFinal)

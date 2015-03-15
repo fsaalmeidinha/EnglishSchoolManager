@@ -30,8 +30,10 @@ namespace EnglishSchoolManagerRules.Escola
 
         #region Métodos
 
-        //No método salvar...
-        //.OrderBy(horario => horario.DiaSemana).ThenBy(horario => horario.HorarioInicio)
+        public List<Aula> Listar()
+        {
+            return contexto.Aulas.Where(usr => usr.EscolaId == usuarioAtivo.EscolaId).ToList();
+        }
 
         protected override List<EnglishSchoolManagerModel.Geral.Erro> validarSalvar(Aula aula)
         {
@@ -103,7 +105,7 @@ namespace EnglishSchoolManagerRules.Escola
             List<HorarioAula> horariosAulasSalvas = new List<HorarioAula>();
 
             List<string> horariosDemaisAulas = contexto.Aulas
-                .Where(aulaBD => aulaBD.Id != aulaId && aulaBD.HorariosJson != null && aulaBD.HorariosJson != "")
+                .Where(aulaBD => aulaBD.Id != aulaId && aulaBD.EscolaId == usuarioAtivo.EscolaId && aulaBD.HorariosJson != null && aulaBD.HorariosJson != "")
                 .Select(aulaBD => aulaBD.HorariosJson).ToList();
 
             foreach (string horarioAulaStr in horariosDemaisAulas)
@@ -134,7 +136,7 @@ namespace EnglishSchoolManagerRules.Escola
             entidadeSalvar.Alunos.Clear();
             if (entidade.IdsAlunos != null && entidade.IdsAlunos.Count > 0)
             {
-                List<Usuario> alunosInformados = contexto.Usuarios.Where(aluno => entidade.IdsAlunos.Contains(aluno.Id)).ToList();
+                List<Usuario> alunosInformados = contexto.Usuarios.Where(aluno => entidade.IdsAlunos.Contains(aluno.Id) && aluno.EscolaId == usuarioAtivo.EscolaId).ToList();
                 alunosInformados.ForEach(aluno => aluno.Aula = entidadeSalvar);
             }
         }

@@ -29,27 +29,40 @@ namespace EnglishSchoolManagerRules.Acesso
 
         #region Métodos
 
+        public List<Usuario> Listar()
+        {
+            return contexto.Usuarios.Where(usr => usr.EscolaId == usuarioAtivo.EscolaId).ToList();
+        }
+
         public List<Usuario> ListarAlunosAtivosESemAula(int aulaId = 0)
         {
             int nivelAcessoAluno = Convert.ToInt32(NivelAcessoEnum.Aluno);
             return contexto.Usuarios.Where(usr => usr.NivelAcesso == nivelAcessoAluno
                 && (usr.AulaId == null || usr.AulaId == aulaId)
-                && usr.Ativo == true).ToList();
+                && usr.Ativo == true
+                && usr.EscolaId == usuarioAtivo.EscolaId).ToList();
         }
 
         public static Usuario Autenticar(string email, string senha)
         {
+            Usuario usuario = null;
             try
             {
                 if (email != null)
                     email = email.ToLower();
-                return new ESMEntities().Usuarios.FirstOrDefault(usr => usr.Email == email && usr.Senha == senha);
+
+                using (ESMEntities contexto = new ESMEntities())
+                {
+                    usuario = contexto.Usuarios.Include("Escola").FirstOrDefault(usr => usr.Email == email && usr.Senha == senha);
+                }
+
             }
             catch (Exception ex)
             {
                 LogRN.GravarLog(ex);
-                return null;
             }
+
+            return usuario;
         }
 
         protected override List<EnglishSchoolManagerModel.Geral.Erro> validarSalvar(Usuario usuario)
@@ -64,7 +77,7 @@ namespace EnglishSchoolManagerRules.Acesso
 
             if (usuario.Id > 0)
             {
-                Usuario usuarioBD = contexto.Usuarios.FirstOrDefault(usr => usr.Id == usuario.Id);
+                Usuario usuarioBD = contexto.Usuarios.FirstOrDefault(usr => usr.Id == usuario.Id && usr.EscolaId == usuarioAtivo.EscolaId);
                 if (usuarioBD == null)
                 {
                     erros.Add(new Erro(ErroEnum.Acesso_UsuarioRN_ValidarSalvar_UsuarioNaoExistente));

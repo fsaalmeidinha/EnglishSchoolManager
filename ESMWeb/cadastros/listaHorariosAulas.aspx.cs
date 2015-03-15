@@ -16,7 +16,7 @@ namespace ESMWeb.cadastros
         {
             if (!Page.IsPostBack)
             {
-                CalendarioAulas calendarioAulas = new CalendarioAulasRN(AcessoHelper.UsuarioAtivoHelper.RecuperarUsuarioAtivo()).RecuperarCalendarioAulas();
+                CalendarioAulas calendarioAulas = new CalendarioAulasRN(Autenticacao.Autenticacao.RecuperarUsuarioAutenticado()).RecuperarCalendarioAulas();
                 List<HorarioAula> horariosAulas = new List<HorarioAula>();
                 horariosAulas.AddRange(calendarioAulas.HorariosAulasSegundaFeira.HorariosAulas.OrderBy(horario => horario.HorarioInicio));
                 horariosAulas.AddRange(calendarioAulas.HorariosAulasTercaFeira.HorariosAulas.OrderBy(horario => horario.HorarioInicio));

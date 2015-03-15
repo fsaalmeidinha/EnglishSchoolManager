@@ -10,6 +10,6 @@ namespace EnglishSchoolManagerRules.Geral
     {
         Resultado Salvar(Entidade entidade);
 
-        List<Entidade> Listar();
+        //List<Entidade> Listar();
     }
 }

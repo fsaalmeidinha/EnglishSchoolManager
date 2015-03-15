@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EnglishSchoolManagerModel;
 using EnglishSchoolManagerRules.Acesso;
-using ESMWeb.AcessoHelper;
 using EnglishSchoolManagerModel.Geral;
 using ESMWeb.Endereco;
 
@@ -51,6 +50,8 @@ namespace ESMWeb.cadastros
                     txtSenha.Text = usuario.Senha;
                     txtTelefone.Text = usuario.Telefone;
                     cbAtivo.Checked = usuario.Ativo;
+                    cbValorPersonalizado.Checked = usuario.ValorPersonalizado;
+                    txtValor.Text = usuario.ValorMensalidade.ToString("N2");
                 }
             }
         }
@@ -71,6 +72,11 @@ namespace ESMWeb.cadastros
                 }
 
                 usuarioSalvar.Telefone = txtTelefone.Text;
+                usuarioSalvar.ValorPersonalizado = cbValorPersonalizado.Checked;
+                if (!String.IsNullOrEmpty(txtValor.Text) && txtValor.Text.Split(' ').Length == 2)
+                {
+                    usuarioSalvar.ValorMensalidade = Convert.ToDecimal(txtValor.Text.Split(' ')[1], new System.Globalization.CultureInfo("pt-BR"));
+                }
                 usuarioSalvar.Ativo = cbAtivo.Checked;
 
                 if (!String.IsNullOrEmpty(txtSenha.Text))

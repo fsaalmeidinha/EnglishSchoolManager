@@ -13,7 +13,7 @@ namespace ESMWeb.Endereco
         {
             get
             {
-                return AcessoHelper.UsuarioAtivoHelper.RecuperarUsuarioAtivo();
+                return Autenticacao.Autenticacao.RecuperarUsuarioAutenticado();
             }
             set { }
         }

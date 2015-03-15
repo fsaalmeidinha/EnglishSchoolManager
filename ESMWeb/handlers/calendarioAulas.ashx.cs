@@ -15,7 +15,7 @@ namespace ESMWeb.handlers
     {
         public void ProcessRequest(HttpContext context)
         {
-            CalendarioAulas calendarioAulas = new CalendarioAulasRN(AcessoHelper.UsuarioAtivoHelper.RecuperarUsuarioAtivo()).RecuperarCalendarioAulas();
+            CalendarioAulas calendarioAulas = new CalendarioAulasRN(Autenticacao.Autenticacao.RecuperarUsuarioAutenticado()).RecuperarCalendarioAulas();
             context.Response.Write(CommonsAPI.Serialize.JavaScriptSerializerHelper.Serialize(calendarioAulas));
         }
 
