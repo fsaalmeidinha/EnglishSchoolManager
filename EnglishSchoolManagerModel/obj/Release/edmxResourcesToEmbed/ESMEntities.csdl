@@ -7,6 +7,15 @@
       <End Role="Aula" EntitySet="Aulas" />
       <End Role="Usuario" EntitySet="Usuarios" />
     </AssociationSet>
+    <EntitySet Name="Escolas" EntityType="EnglishSchoolManagerModel.Escola" />
+    <AssociationSet Name="FK__tblAula__EscolaI__4AB81AF0" Association="EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0">
+      <End Role="tblEscola" EntitySet="Escolas" />
+      <End Role="Aula" EntitySet="Aulas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsuari__Escol__49C3F6B7" Association="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7">
+      <End Role="tblEscola" EntitySet="Escolas" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuario">
     <Key>
@@ -19,26 +28,33 @@
     <Property Type="Int32" Name="NivelAcesso" Nullable="false" />
     <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
     <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
-    <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
-    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+    <Property Type="DateTime" Name="DataInsercao" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" Precision="3" />
     <Property Type="String" Name="Telefone" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Type="Boolean" Name="Ativo" Nullable="false" />
     <Property Type="Int32" Name="AulaId" />
     <NavigationProperty Name="Aula" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Usuario" ToRole="Aula" />
+    <Property Name="EscolaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Escola" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" FromRole="Usuario" ToRole="tblEscola" />
+    <Property Name="ValorMensalidade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ValorPersonalizado" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Aula">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Descricao" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Descricao" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="HorariosJson" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="Particular" Nullable="false" />
     <Property Type="Int32" Name="UsuarioInsercaoId" Nullable="false" />
     <Property Type="Int32" Name="UsuarioAlteracaoId" Nullable="false" />
-    <Property Type="DateTime" Name="DataInsercao" Nullable="false" />
-    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" />
+    <Property Type="DateTime" Name="DataInsercao" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DataAlteracao" Nullable="false" Precision="3" />
     <NavigationProperty Name="Alunos" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" FromRole="Aula" ToRole="Usuario" />
+    <Property Type="Decimal" Name="ValorMensalidade" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="EscolaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Escola" Relationship="EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0" FromRole="Aula" ToRole="tblEscola" />
   </EntityType>
   <Association Name="FK__tblUsuari__AulaI__32E0915F">
     <End Type="EnglishSchoolManagerModel.Aula" Role="Aula" Multiplicity="0..1" />
@@ -49,6 +65,40 @@
       </Principal>
       <Dependent Role="Usuario">
         <PropertyRef Name="AulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Escola">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Aulas" Relationship="EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0" FromRole="tblEscola" ToRole="Aula" />
+    <NavigationProperty Name="Usuarios" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" FromRole="tblEscola" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK__tblAula__EscolaI__4AB81AF0">
+    <End Type="EnglishSchoolManagerModel.Escola" Role="tblEscola" Multiplicity="1" />
+    <End Type="EnglishSchoolManagerModel.Aula" Role="Aula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEscola">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aula">
+        <PropertyRef Name="EscolaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsuari__Escol__49C3F6B7">
+    <End Type="EnglishSchoolManagerModel.Escola" Role="tblEscola" Multiplicity="1" />
+    <End Type="EnglishSchoolManagerModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEscola">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="EscolaId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -11,3 +11,16 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Engli
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities.mdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities.sdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.dll.config
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerModel\obj\Release\EnglishSchoolManagerModel.pdb

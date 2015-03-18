@@ -1,0 +1,16 @@
+﻿.error
+{
+    border-color: red !important;
+    color: red;
+}
+
+.clsErros_title
+{
+    color: Red;
+    text-decoration: underline;
+}
+
+.clsErros_msg
+{
+    color: Red;
+}

@@ -333,6 +333,7 @@
     <None Include="bootstrap\less\sb-admin-2.less" />
     <None Include="bootstrap\less\variables.less" />
     <Content Include="handlers\calendarioAulas.ashx" />
+    <None Include="Properties\PublishProfiles\englishschoolmanager.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,3 +12,17 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Engli
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerRules\obj\Release\EnglishSchoolManagerRules.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\ESMEntities.mdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\ESMEntities.sdf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\EnglishSchoolManagerRules.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\obj\Release\EnglishSchoolManagerRules.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\obj\Release\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\EnglishSchoolManagerRules\obj\Release\EnglishSchoolManagerRules.pdb

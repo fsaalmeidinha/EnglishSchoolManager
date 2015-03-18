@@ -4,3 +4,10 @@ C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\Commo
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Release\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Release\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\bin\Release\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Release\CommonsAPI.pdb
