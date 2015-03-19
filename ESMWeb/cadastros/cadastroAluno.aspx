@@ -72,6 +72,15 @@
                                                     class="form-control" />
                                             </div>
                                         </div>
+
+                                        <div class="row form-group" id="divDataProxPagamento" runat="server" clientidmode="Static">
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                <label>
+                                                    Data próximo pagamento</label>
+                                                <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDataProxPagamento" class="form-control datetimepicker date-mask"></asp:TextBox>
+                                            </div>
+                                        </div>
+
                                         <div class="row form-group">
                                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                 <label>

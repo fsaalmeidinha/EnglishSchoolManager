@@ -18,9 +18,11 @@ C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMWe
 C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.csprojResolveAssemblyReference.cache
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities.mdf
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities.sdf
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll.config
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.pdb
 D:\!job\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.dll
@@ -35,7 +37,5 @@ D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerModel.pdb
 D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerRules.pdb
 D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.xml
 D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
-D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.csprojResolveAssemblyReference.cache
 D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.dll
 D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.pdb
-D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll.config

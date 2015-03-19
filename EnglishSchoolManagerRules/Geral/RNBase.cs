@@ -95,7 +95,7 @@ namespace EnglishSchoolManagerRules.Geral
                         var entityKey = new EntityKey(containerName + "." + setName, "Id", idEntidade);
                         Entidade entidadeBD = contexto.GetObjectByKey(entityKey) as Entidade;
 
-                        tratarObjetoSalvar(entidade, entidadeBD);
+                        tratarObjetoSalvar(entidadeSalvar, entidadeBD);
                         entidadeSalvar = contexto.CreateObjectSet<Entidade>().ApplyCurrentValues(entidadeSalvar);
                     }
 

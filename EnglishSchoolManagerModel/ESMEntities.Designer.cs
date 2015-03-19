@@ -1076,6 +1076,30 @@ namespace EnglishSchoolManagerModel
         private global::System.Boolean _ValorPersonalizado;
         partial void OnValorPersonalizadoChanging(global::System.Boolean value);
         partial void OnValorPersonalizadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> DataProximoPagamento
+        {
+            get
+            {
+                return _DataProximoPagamento;
+            }
+            set
+            {
+                OnDataProximoPagamentoChanging(value);
+                ReportPropertyChanging("DataProximoPagamento");
+                _DataProximoPagamento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DataProximoPagamento");
+                OnDataProximoPagamentoChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _DataProximoPagamento;
+        partial void OnDataProximoPagamentoChanging(Nullable<global::System.DateTime> value);
+        partial void OnDataProximoPagamentoChanged();
 
         #endregion
 

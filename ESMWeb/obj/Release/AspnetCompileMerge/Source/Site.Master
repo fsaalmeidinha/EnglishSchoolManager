@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ESMWeb.SiteMaster" %>
+
+<%--http://startbootstrap.com/template-overviews/sb-admin-2/--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>English School Manager</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="English School Manager" />
+    <meta name="author" content="Felipe Almeida" />
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core CSS -->
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/plugins/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <!-- MetisMenu CSS -->
+    <link href="~/bootstrap/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/bootstrap/css/sb-admin-2.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="~/bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- Select2 -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/css/select2.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- jQuery -->
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>--%>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script type="text/javascript" src="/bootstrap/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrapValidator.js"></script>
+
+    <!-- jQuery tmpl -->
+    <script type="text/javascript" src="/Scripts/jquery.tmpl.min.js"></script>
+
+    <!-- Select2 -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/js/select2.min.js"></script>
+
+    <!-- Mascaras jQuery -->
+    <script src="/Scripts/jquery.price_format.1.4.js" type="text/javascript"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/Scripts/Site.js"></script>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Index/ManagerIndex.aspx"><span id="spanNomeEscola" runat="server"></span></a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a href="/Account/login.aspx"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a class="active" href="../cadastros/listaAlunos.aspx"><i class="fa fa-dashboard fa-fw"></i> Alunos</a>
+                        </li>
+                        <li>
+                            <a class="active" href="../cadastros/listaAulas.aspx"><i class="fa fa-dashboard fa-fw"></i> Aulas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+</body>
+</html>

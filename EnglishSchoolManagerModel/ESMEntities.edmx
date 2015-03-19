@@ -47,8 +47,9 @@
           <Property Name="EscolaId" Type="int" Nullable="false" />
           <Property Name="ValorMensalidade" Type="money" Nullable="false" />
           <Property Name="ValorPersonalizado" Type="bit" Nullable="false" />
+          <Property Name="DataProximoPagamento" Type="datetime" />
         </EntityType>
-        <Association Name="FK__tblAula__EscolaI__4AB81AF0">
+        <Association Name="FK__tblAula__EscolaI__33D4B598">
           <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
           <End Role="tblAula" Type="Self.tblAula" Multiplicity="*" />
           <ReferentialConstraint>
@@ -60,7 +61,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUsuari__AulaI__32E0915F">
+        <Association Name="FK__tblUsuari__AulaI__2F10007B">
           <End Role="tblAula" Type="Self.tblAula" Multiplicity="0..1" />
           <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -72,7 +73,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUsuari__Escol__49C3F6B7">
+        <Association Name="FK__tblUsuari__Escol__32E0915F">
           <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
           <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,15 +89,15 @@
           <EntitySet Name="tblAula" EntityType="Self.tblAula" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEscola" EntityType="Self.tblEscola" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblAula__EscolaI__4AB81AF0" Association="Self.FK__tblAula__EscolaI__4AB81AF0">
+          <AssociationSet Name="FK__tblAula__EscolaI__33D4B598" Association="Self.FK__tblAula__EscolaI__33D4B598">
             <End Role="tblEscola" EntitySet="tblEscola" />
             <End Role="tblAula" EntitySet="tblAula" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="Self.FK__tblUsuari__AulaI__32E0915F">
+          <AssociationSet Name="FK__tblUsuari__AulaI__2F10007B" Association="Self.FK__tblUsuari__AulaI__2F10007B">
             <End Role="tblAula" EntitySet="tblAula" />
             <End Role="tblUsuario" EntitySet="tblUsuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUsuari__Escol__49C3F6B7" Association="Self.FK__tblUsuari__Escol__49C3F6B7">
+          <AssociationSet Name="FK__tblUsuari__Escol__32E0915F" Association="Self.FK__tblUsuari__Escol__32E0915F">
             <End Role="tblEscola" EntitySet="tblEscola" />
             <End Role="tblUsuario" EntitySet="tblUsuario" />
           </AssociationSet>
@@ -143,6 +144,7 @@
           <NavigationProperty Name="Escola" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" FromRole="Usuario" ToRole="tblEscola" />
           <Property Name="ValorMensalidade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="ValorPersonalizado" Type="Boolean" Nullable="false" />
+          <Property Name="DataProximoPagamento" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Aula">
           <Key>
@@ -216,6 +218,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
               <MappingFragment StoreEntitySet="tblUsuario">
+                <ScalarProperty Name="DataProximoPagamento" ColumnName="DataProximoPagamento" />
                 <ScalarProperty Name="ValorPersonalizado" ColumnName="ValorPersonalizado" />
                 <ScalarProperty Name="ValorMensalidade" ColumnName="ValorMensalidade" />
                 <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />

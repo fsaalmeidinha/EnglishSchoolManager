@@ -80,6 +80,7 @@
     <Content Include="bootstrap\css\bootstrap.css" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\css\plugins\dataTables.bootstrap.css" />
+    <Content Include="bootstrap\css\plugins\jquery.datetimepicker.css" />
     <Content Include="bootstrap\css\plugins\metisMenu\metisMenu.css" />
     <Content Include="bootstrap\css\plugins\metisMenu\metisMenu.min.css" />
     <Content Include="bootstrap\css\plugins\morris.css" />
@@ -94,8 +95,9 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\bootstrapValidator.js" />
-    <Content Include="bootstrap\js\disney_datetimepicker.js" />
+    <Content Include="bootstrap\js\esm_datetime.js" />
     <Content Include="bootstrap\js\jquery-1.11.0.js" />
+    <Content Include="bootstrap\js\jquery.datetimepicker.js" />
     <Content Include="bootstrap\js\mascaras.js" />
     <Content Include="bootstrap\js\mask\jquery.inputmask.date.extensions.js" />
     <Content Include="bootstrap\js\mask\jquery.inputmask.extensions.js" />

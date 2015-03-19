@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
         <MappingFragment StoreEntitySet="tblUsuario">
+          <ScalarProperty Name="DataProximoPagamento" ColumnName="DataProximoPagamento" />
           <ScalarProperty Name="ValorPersonalizado" ColumnName="ValorPersonalizado" />
           <ScalarProperty Name="ValorMensalidade" ColumnName="ValorMensalidade" />
           <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />

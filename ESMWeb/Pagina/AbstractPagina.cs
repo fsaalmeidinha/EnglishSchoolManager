@@ -9,6 +9,9 @@ namespace ESMWeb.Endereco
 {
     public abstract class AbstractPagina : System.Web.UI.Page
     {
+        public static System.Globalization.CultureInfo cultura = new System.Globalization.CultureInfo("pt-BR");
+        public static string dateTimeFormat = "dd/MM/yyyy";
+
         protected Usuario UsuarioAtivo
         {
             get

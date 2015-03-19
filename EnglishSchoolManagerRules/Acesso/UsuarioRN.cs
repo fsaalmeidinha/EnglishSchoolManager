@@ -136,13 +136,20 @@ namespace EnglishSchoolManagerRules.Acesso
             return erros;
         }
 
-        protected override void tratarObjetoSalvar(Usuario usuario, Usuario usuarioBD)
+        protected override void tratarObjetoSalvar(Usuario usuarioSalvar, Usuario usuarioBD)
         {
-            usuario.NivelAcesso = Convert.ToInt32(NivelAcessoEnum.Aluno);
-            if (usuario.Ativo == false && usuarioBD.Ativo == true)
+            if (usuarioSalvar.Id != usuarioAtivo.Id)
             {
-                usuario.AulaId = null;
-                usuario.Aula = null;
+                usuarioSalvar.NivelAcesso = Convert.ToInt32(NivelAcessoEnum.Aluno);
+            }
+            if (usuarioSalvar.NivelAcesso == Convert.ToInt32(NivelAcessoEnum.Administrador))
+            {
+                usuarioSalvar.DataProximoPagamento = null;
+            }
+            if (usuarioSalvar.Ativo == false && usuarioBD != null && usuarioBD.Ativo == true)
+            {
+                usuarioSalvar.AulaId = null;
+                usuarioSalvar.Aula = null;
             }
         }
 

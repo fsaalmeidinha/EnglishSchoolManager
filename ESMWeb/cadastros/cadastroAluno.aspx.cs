@@ -8,6 +8,7 @@ using EnglishSchoolManagerModel;
 using EnglishSchoolManagerRules.Acesso;
 using EnglishSchoolManagerModel.Geral;
 using ESMWeb.Endereco;
+using EnglishSchoolManagerModel.Enumerador;
 
 namespace ESMWeb.cadastros
 {
@@ -52,6 +53,16 @@ namespace ESMWeb.cadastros
                     cbAtivo.Checked = usuario.Ativo;
                     cbValorPersonalizado.Checked = usuario.ValorPersonalizado;
                     txtValor.Text = usuario.ValorMensalidade.ToString("N2");
+
+                    if (usuario.NivelAcesso == Convert.ToInt32(NivelAcessoEnum.Aluno))
+                    {
+                        txtDataProxPagamento.Text = usuario.DataProximoPagamento == null ? "" : usuario.DataProximoPagamento.GetValueOrDefault().ToString(dateTimeFormat);
+                    }
+                    else
+                    {
+                        txtDataProxPagamento.Text = "";
+                        divDataProxPagamento.Visible = false;
+                    }
                 }
             }
         }
@@ -77,7 +88,20 @@ namespace ESMWeb.cadastros
                 {
                     usuarioSalvar.ValorMensalidade = Convert.ToDecimal(txtValor.Text.Split(' ')[1], new System.Globalization.CultureInfo("pt-BR"));
                 }
+                if (!String.IsNullOrEmpty(txtDataProxPagamento.Text))
+                {
+                    DateTime dtAux = DateTime.MinValue;
+                    if (DateTime.TryParse(txtDataProxPagamento.Text, cultura, System.Globalization.DateTimeStyles.None, out dtAux))
+                        usuarioSalvar.DataProximoPagamento = dtAux;
+                    else
+                        usuarioSalvar.DataProximoPagamento = null;
+                }
+                else
+                {
+                    usuarioSalvar.DataProximoPagamento = null;
+                }
                 usuarioSalvar.Ativo = cbAtivo.Checked;
+
 
                 if (!String.IsNullOrEmpty(txtSenha.Text))
                 {

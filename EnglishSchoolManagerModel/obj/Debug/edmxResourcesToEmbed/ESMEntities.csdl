@@ -38,6 +38,7 @@
     <NavigationProperty Name="Escola" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" FromRole="Usuario" ToRole="tblEscola" />
     <Property Name="ValorMensalidade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="ValorPersonalizado" Type="Boolean" Nullable="false" />
+    <Property Name="DataProximoPagamento" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Aula">
     <Key>
