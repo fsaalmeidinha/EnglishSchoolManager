@@ -1,0 +1,17 @@
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMEntities.mdf
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMEntities.sdf
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMEntities_log.ldf
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMConsolePagamento.exe.config
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMConsolePagamento.exe
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\ESMConsolePagamento.pdb
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\EnglishSchoolManagerRules.pdb
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\bin\Debug\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\obj\Debug\ESMConsolePagamento.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\obj\Debug\ESMConsolePagamento.exe
+D:\!job\EnglishSchoolManager\ESMConsolePagamento\obj\Debug\ESMConsolePagamento.pdb

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="ESMEntities-Web.config Connection String" description="ESMEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ESMEntities.csdl|res://*/ESMEntities.ssdl|res://*/ESMEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=dwraal58wi.database.windows.net;initial catalog=english-school-manager;persist security info=True;user id=englishsm;password=esm@)!$2014;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+  <parameter name="ESMEntities-Web.config Connection String" description="ESMEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ESMEntities.csdl|res://*/ESMEntities.ssdl|res://*/ESMEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=dwraal58wi.database.windows.net;initial catalog=englishsm;persist security info=True;user id=englishsm@dwraal58wi;password=esm@)!$2014;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\!job\\EnglishSchoolManager\\ESMWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ESMEntities']/@connectionString" />
   </parameter>
 </parameters>

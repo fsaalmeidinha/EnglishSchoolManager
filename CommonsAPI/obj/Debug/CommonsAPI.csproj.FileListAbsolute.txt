@@ -15,3 +15,4 @@ D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.dll
 D:\!job\EnglishSchoolManager\CommonsAPI\bin\Debug\Newtonsoft.Json.xml
 D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.dll
 D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\CommonsAPI\obj\Debug\CommonsAPI.csprojResolveAssemblyReference.cache
