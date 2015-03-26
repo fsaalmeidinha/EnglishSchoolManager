@@ -2,8 +2,8 @@
   "$schema": "http://schemastore.org/schemas/json/webjob-publish-settings.json",
   "webJobName": "ESMConsolePagamento",
   "startTime": "2015-03-19T00:00:00-03:00",
-  "endTime": null,
-  "jobRecurrenceFrequency": "Minute",
+  "endTime": "2030-03-19T00:00:00-03:00",
+  "jobRecurrenceFrequency": "Hour",
   "interval": 1,
   "runMode": "Scheduled"
 }

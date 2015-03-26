@@ -29,9 +29,10 @@ namespace EnglishSchoolManagerRules.Acesso
 
         #region Métodos
 
-        public List<Usuario> Listar()
+        public List<Usuario> ListarAlunos()
         {
-            return contexto.Usuarios.Where(usr => usr.EscolaId == usuarioAtivo.EscolaId).ToList();
+            int nivelAcesso = Convert.ToInt32(NivelAcessoEnum.Aluno);
+            return contexto.Usuarios.Where(usr => usr.EscolaId == usuarioAtivo.EscolaId && usr.NivelAcesso == nivelAcesso).ToList();
         }
 
         public List<Usuario> ListarAlunosAtivosESemAula(int aulaId = 0)
@@ -146,6 +147,7 @@ namespace EnglishSchoolManagerRules.Acesso
             {
                 usuarioSalvar.DataProximoPagamento = null;
             }
+            usuarioSalvar.AulaId = usuarioBD.AulaId;
             if (usuarioSalvar.Ativo == false && usuarioBD != null && usuarioBD.Ativo == true)
             {
                 usuarioSalvar.AulaId = null;
@@ -154,5 +156,22 @@ namespace EnglishSchoolManagerRules.Acesso
         }
 
         #endregion Métodos
+
+        public List<Usuario> ListarAlunosAtivosComTurma()
+        {
+            List<Usuario> alunosAtivosComTurma = new List<Usuario>();
+
+            using (ESMEntities contexto = new ESMEntities())
+            {
+                int nivelAcessoAluno = Convert.ToInt32(NivelAcessoEnum.Aluno);
+                alunosAtivosComTurma = contexto.Usuarios
+                    .Where(usuario => usuario.NivelAcesso == nivelAcessoAluno &&
+                            usuario.Ativo == true
+                            && usuario.AulaId != null
+                            && usuario.EscolaId == usuarioAtivo.EscolaId).OrderBy(usr => usr.Nome).ToList();
+            }
+
+            return alunosAtivosComTurma;
+        }
     }
 }

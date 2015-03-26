@@ -85,3 +85,20 @@ ADD [ValorPersonalizado] BIT NOT NULL DEFAULT(0);
 GO
 ALTER TABLE [dbo].[tblUsuario]
 ADD [DataProximoPagamento] DATETIME NULL;
+
+
+GO
+CREATE TABLE [dbo].[tblPagamento](
+    [Id] [INT] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[AlunoId] INT NOT NULL,
+	[EscolaId] INT NOT NULL,
+	[Valor] MONEY NOT NULL,
+	[PagamentoEfetuado] BIT NOT NULL,
+	[DataPagamento] [DATETIME] NULL,
+    [UsuarioInsercaoId] [INT] NOT NULL,
+    [UsuarioAlteracaoId] [INT] NOT NULL,
+    [DataInsercao] [DATETIME] NOT NULL,
+    [DataAlteracao] [DATETIME] NOT NULL,
+    FOREIGN KEY (AlunoId) REFERENCES [dbo].[tblUsuario](Id),
+	FOREIGN KEY (EscolaId) REFERENCES [dbo].[tblEscola](Id)
+);

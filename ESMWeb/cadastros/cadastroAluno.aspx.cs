@@ -62,6 +62,7 @@ namespace ESMWeb.cadastros
                     {
                         txtDataProxPagamento.Text = "";
                         divDataProxPagamento.Visible = false;
+                        divValorPersonalizado.Visible = false;
                     }
                 }
             }

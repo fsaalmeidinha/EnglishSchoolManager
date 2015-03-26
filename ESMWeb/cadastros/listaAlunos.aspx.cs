@@ -16,7 +16,7 @@ namespace ESMWeb.cadastros
             if (!Page.IsPostBack)
             {
                 UsuarioRN usuarioRN = new UsuarioRN(UsuarioAtivo);
-                rptUsuarios.DataSource = usuarioRN.Listar();
+                rptUsuarios.DataSource = usuarioRN.ListarAlunos();
                 rptUsuarios.DataBind();
             }
         }

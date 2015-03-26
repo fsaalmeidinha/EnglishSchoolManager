@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EnglishSchoolManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="EnglishSchoolManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblAula">
           <Key>
             <PropertyRef Name="Id" />
@@ -27,6 +27,21 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AlunoId" Type="int" Nullable="false" />
+          <Property Name="EscolaId" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="money" Nullable="false" />
+          <Property Name="PagamentoEfetuado" Type="bit" Nullable="false" />
+          <Property Name="DataPagamento" Type="datetime" />
+          <Property Name="UsuarioInsercaoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioAlteracaoId" Type="int" Nullable="false" />
+          <Property Name="DataInsercao" Type="datetime" Nullable="false" />
+          <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="tblUsuario">
           <Key>
@@ -61,6 +76,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tblPagame__Aluno__49C3F6B7">
+          <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="1" />
+          <End Role="tblPagamento" Type="Self.tblPagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPagamento">
+              <PropertyRef Name="AlunoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPagame__Escol__4AB81AF0">
+          <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
+          <End Role="tblPagamento" Type="Self.tblPagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEscola">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPagamento">
+              <PropertyRef Name="EscolaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tblUsuari__AulaI__2F10007B">
           <End Role="tblAula" Type="Self.tblAula" Multiplicity="0..1" />
           <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
@@ -88,10 +127,19 @@
         <EntityContainer Name="EnglishSchoolManagerModelStoreContainer">
           <EntitySet Name="tblAula" EntityType="Self.tblAula" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblEscola" EntityType="Self.tblEscola" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPagamento" EntityType="Self.tblPagamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__tblAula__EscolaI__33D4B598" Association="Self.FK__tblAula__EscolaI__33D4B598">
             <End Role="tblEscola" EntitySet="tblEscola" />
             <End Role="tblAula" EntitySet="tblAula" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPagame__Aluno__49C3F6B7" Association="Self.FK__tblPagame__Aluno__49C3F6B7">
+            <End Role="tblUsuario" EntitySet="tblUsuario" />
+            <End Role="tblPagamento" EntitySet="tblPagamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPagame__Escol__4AB81AF0" Association="Self.FK__tblPagame__Escol__4AB81AF0">
+            <End Role="tblEscola" EntitySet="tblEscola" />
+            <End Role="tblPagamento" EntitySet="tblPagamento" />
           </AssociationSet>
           <AssociationSet Name="FK__tblUsuari__AulaI__2F10007B" Association="Self.FK__tblUsuari__AulaI__2F10007B">
             <End Role="tblAula" EntitySet="tblAula" />
@@ -105,8 +153,8 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EnglishSchoolManagerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="ESMEntities" annotation:LazyLoadingEnabled="true">
+      <Schema Namespace="EnglishSchoolManagerModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ESMEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="Usuarios" EntityType="EnglishSchoolManagerModel.Usuario" />
           <EntitySet Name="Aulas" EntityType="EnglishSchoolManagerModel.Aula" />
           <AssociationSet Name="FK__tblUsuari__AulaI__32E0915F" Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F">
@@ -122,12 +170,21 @@
             <End Role="tblEscola" EntitySet="Escolas" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
+          <EntitySet Name="Pagamentos" EntityType="EnglishSchoolManagerModel.Pagamento" />
+          <AssociationSet Name="FK__tblPagame__Escol__4AB81AF0" Association="EnglishSchoolManagerModel.FK__tblPagame__Escol__4AB81AF0">
+            <End Role="Escola" EntitySet="Escolas" />
+            <End Role="tblPagamento" EntitySet="Pagamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPagame__Aluno__49C3F6B7" Association="EnglishSchoolManagerModel.FK__tblPagame__Aluno__49C3F6B7">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="tblPagamento" EntitySet="Pagamentos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Senha" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -145,12 +202,13 @@
           <Property Name="ValorMensalidade" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="ValorPersonalizado" Type="Boolean" Nullable="false" />
           <Property Name="DataProximoPagamento" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pagamentos" Relationship="EnglishSchoolManagerModel.FK__tblPagame__Aluno__49C3F6B7" FromRole="Usuario" ToRole="tblPagamento" />
         </EntityType>
         <EntityType Name="Aula">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="Descricao" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="HorariosJson" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Particular" Nullable="false" />
@@ -179,11 +237,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Aulas" Relationship="EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0" FromRole="tblEscola" ToRole="Aula" />
           <NavigationProperty Name="Usuarios" Relationship="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" FromRole="tblEscola" ToRole="Usuario" />
+          <NavigationProperty Name="Pagamentos" Relationship="EnglishSchoolManagerModel.FK__tblPagame__Escol__4AB81AF0" FromRole="Escola" ToRole="tblPagamento" />
         </EntityType>
         <Association Name="FK__tblAula__EscolaI__4AB81AF0">
           <End Type="EnglishSchoolManagerModel.Escola" Role="tblEscola" Multiplicity="1" />
@@ -209,11 +268,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Pagamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AlunoId" Type="Int32" Nullable="false" />
+          <Property Name="EscolaId" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PagamentoEfetuado" Type="Boolean" Nullable="false" />
+          <Property Name="DataPagamento" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioInsercaoId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioAlteracaoId" Type="Int32" Nullable="false" />
+          <Property Name="DataInsercao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataAlteracao" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Escola" Relationship="EnglishSchoolManagerModel.FK__tblPagame__Escol__4AB81AF0" FromRole="tblPagamento" ToRole="Escola" />
+          <NavigationProperty Name="Aluno" Relationship="EnglishSchoolManagerModel.FK__tblPagame__Aluno__49C3F6B7" FromRole="tblPagamento" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK__tblPagame__Escol__4AB81AF0">
+          <End Type="EnglishSchoolManagerModel.Escola" Role="Escola" Multiplicity="1" />
+          <End Type="EnglishSchoolManagerModel.Pagamento" Role="tblPagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Escola">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPagamento">
+              <PropertyRef Name="EscolaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPagame__Aluno__49C3F6B7">
+          <End Type="EnglishSchoolManagerModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="EnglishSchoolManagerModel.Pagamento" Role="tblPagamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPagamento">
+              <PropertyRef Name="AlunoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EnglishSchoolManagerModelStoreContainer" CdmEntityContainer="ESMEntities">
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
@@ -262,12 +362,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Pagamentos">
+            <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Pagamento">
+              <MappingFragment StoreEntitySet="tblPagamento">
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+                <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+                <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+                <ScalarProperty Name="DataPagamento" ColumnName="DataPagamento" />
+                <ScalarProperty Name="PagamentoEfetuado" ColumnName="PagamentoEfetuado" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />
+                <ScalarProperty Name="AlunoId" ColumnName="AlunoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -286,13 +402,16 @@
       <Diagram Name="ESMEntities">
         <EntityTypeShape EntityType="EnglishSchoolManagerModel.Usuario" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" />
         <EntityTypeShape EntityType="EnglishSchoolManagerModel.Aula" Width="1.5" PointX="3.375" PointY="0.75" Height="1.7879850260416674" />
-        <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F" >
+        <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblUsuari__AulaI__32E0915F">
           <ConnectorPoint PointX="3.375" PointY="2.12474609375" />
           <ConnectorPoint PointX="2.25" PointY="2.12474609375" />
         </AssociationConnector>
         <EntityTypeShape EntityType="EnglishSchoolManagerModel.Escola" Width="1.5" PointX="5.75" PointY="0.75" />
         <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblAula__EscolaI__4AB81AF0" />
         <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblUsuari__Escol__49C3F6B7" />
+        <EntityTypeShape EntityType="EnglishSchoolManagerModel.Pagamento" Width="1.5" PointX="8" PointY="1.375" />
+        <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblPagame__Escol__4AB81AF0" />
+        <AssociationConnector Association="EnglishSchoolManagerModel.FK__tblPagame__Aluno__49C3F6B7" />
       </Diagram>
     </Diagrams>
   </Designer>

@@ -16,6 +16,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <a href="listaAlunos.aspx">Voltar</a>
+                    <a style="margin-left: 15px;" href="cadastroAluno.aspx">+Novo Aluno</a>
                 </div>
             </div>
             <div class="row">
@@ -81,7 +82,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row form-group">
+                                        <div id="divValorPersonalizado" runat="server" class="row form-group">
                                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                 <label>
                                                     Valor personalizado</label>

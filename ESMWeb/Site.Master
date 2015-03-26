@@ -88,6 +88,9 @@
                         <li>
                             <a class="active" href="../cadastros/listaAulas.aspx"><i class="fa fa-dashboard fa-fw"></i> Aulas</a>
                         </li>
+                        <li>
+                            <a class="active" href="../pagamento/pagamentos.aspx"><i class="fa fa-dashboard fa-fw"></i> Pagamentos</a>
+                        </li>
                     </ul>
                 </div>
             </div>

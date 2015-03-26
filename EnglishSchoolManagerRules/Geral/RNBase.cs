@@ -85,7 +85,7 @@ namespace EnglishSchoolManagerRules.Geral
                         entidadeSalvar.GetType().GetProperty("UsuarioInsercaoId").SetValue(entidadeSalvar, usuarioAtivo.Id, null);
                         entidadeSalvar.GetType().GetProperty("DataInsercao").SetValue(entidadeSalvar, DateTime.UtcNow, null);
                         contexto.CreateObjectSet<Entidade>().AddObject(entidadeSalvar);
-                        tratarObjetoSalvar(entidade, null);
+                        tratarObjetoSalvar(entidadeSalvar, null);
                     }
                     else
                     {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EnglishSchoolManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="EnglishSchoolManagerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="tblAula">
     <Key>
       <PropertyRef Name="Id" />
@@ -22,6 +22,21 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPagamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlunoId" Type="int" Nullable="false" />
+    <Property Name="EscolaId" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="money" Nullable="false" />
+    <Property Name="PagamentoEfetuado" Type="bit" Nullable="false" />
+    <Property Name="DataPagamento" Type="datetime" />
+    <Property Name="UsuarioInsercaoId" Type="int" Nullable="false" />
+    <Property Name="UsuarioAlteracaoId" Type="int" Nullable="false" />
+    <Property Name="DataInsercao" Type="datetime" Nullable="false" />
+    <Property Name="DataAlteracao" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="tblUsuario">
     <Key>
@@ -56,6 +71,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__tblPagame__Aluno__49C3F6B7">
+    <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="1" />
+    <End Role="tblPagamento" Type="Self.tblPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblPagamento">
+        <PropertyRef Name="AlunoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPagame__Escol__4AB81AF0">
+    <End Role="tblEscola" Type="Self.tblEscola" Multiplicity="1" />
+    <End Role="tblPagamento" Type="Self.tblPagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEscola">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblPagamento">
+        <PropertyRef Name="EscolaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__tblUsuari__AulaI__2F10007B">
     <End Role="tblAula" Type="Self.tblAula" Multiplicity="0..1" />
     <End Role="tblUsuario" Type="Self.tblUsuario" Multiplicity="*" />
@@ -83,10 +122,19 @@
   <EntityContainer Name="EnglishSchoolManagerModelStoreContainer">
     <EntitySet Name="tblAula" EntityType="Self.tblAula" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblEscola" EntityType="Self.tblEscola" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPagamento" EntityType="Self.tblPagamento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblUsuario" EntityType="Self.tblUsuario" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__tblAula__EscolaI__33D4B598" Association="Self.FK__tblAula__EscolaI__33D4B598">
       <End Role="tblEscola" EntitySet="tblEscola" />
       <End Role="tblAula" EntitySet="tblAula" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPagame__Aluno__49C3F6B7" Association="Self.FK__tblPagame__Aluno__49C3F6B7">
+      <End Role="tblUsuario" EntitySet="tblUsuario" />
+      <End Role="tblPagamento" EntitySet="tblPagamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPagame__Escol__4AB81AF0" Association="Self.FK__tblPagame__Escol__4AB81AF0">
+      <End Role="tblEscola" EntitySet="tblEscola" />
+      <End Role="tblPagamento" EntitySet="tblPagamento" />
     </AssociationSet>
     <AssociationSet Name="FK__tblUsuari__AulaI__2F10007B" Association="Self.FK__tblUsuari__AulaI__2F10007B">
       <End Role="tblAula" EntitySet="tblAula" />

@@ -18,27 +18,9 @@ C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMWe
 C:\Users\Felipe\documents\visual studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.pdb
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.dll
 C:\Users\Felipe\Documents\Visual Studio 2010\Projects\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
-D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.csprojResolveAssemblyReference.cache
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities.mdf
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities.sdf
 D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMEntities_log.ldf
-D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll.config
-D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.pdb
-D:\!job\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerModel.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerRules.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\System.Web.Providers.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.StorageUtility.dll
-D:\!job\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.pdb
-D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerModel.pdb
-D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerRules.pdb
-D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.xml
-D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
-D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.dll
-D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.pdb
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\css\bootstrap.css
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\css\bootstrap.min.css
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\css\plugins\dataTables.bootstrap.css
@@ -120,3 +102,21 @@ D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\fonts\glyphicons-halflings-reg
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\less\mixins.less
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\less\sb-admin-2.less
 D:\!job\EnglishSchoolManager\ESMWeb\bin\bootstrap\less\variables.less
+D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll.config
+D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\ESMWeb.pdb
+D:\!job\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerModel.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerRules.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\System.Web.Providers.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.StorageUtility.dll
+D:\!job\EnglishSchoolManager\ESMWeb\bin\CommonsAPI.pdb
+D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerModel.pdb
+D:\!job\EnglishSchoolManager\ESMWeb\bin\EnglishSchoolManagerRules.pdb
+D:\!job\EnglishSchoolManager\ESMWeb\bin\Microsoft.WindowsAzure.Diagnostics.xml
+D:\!job\EnglishSchoolManager\ESMWeb\bin\Newtonsoft.Json.xml
+D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.csprojResolveAssemblyReference.cache
+D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.dll
+D:\!job\EnglishSchoolManager\ESMWeb\obj\Debug\ESMWeb.pdb

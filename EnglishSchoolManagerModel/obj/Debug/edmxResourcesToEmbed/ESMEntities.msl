@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EnglishSchoolManagerModelStoreContainer" CdmEntityContainer="ESMEntities">
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Usuario">
@@ -44,6 +44,22 @@
         <MappingFragment StoreEntitySet="tblEscola">
           <ScalarProperty Name="Ativo" ColumnName="Ativo" />
           <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagamentos">
+      <EntityTypeMapping TypeName="EnglishSchoolManagerModel.Pagamento">
+        <MappingFragment StoreEntitySet="tblPagamento">
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="DataInsercao" ColumnName="DataInsercao" />
+          <ScalarProperty Name="UsuarioAlteracaoId" ColumnName="UsuarioAlteracaoId" />
+          <ScalarProperty Name="UsuarioInsercaoId" ColumnName="UsuarioInsercaoId" />
+          <ScalarProperty Name="DataPagamento" ColumnName="DataPagamento" />
+          <ScalarProperty Name="PagamentoEfetuado" ColumnName="PagamentoEfetuado" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="EscolaId" ColumnName="EscolaId" />
+          <ScalarProperty Name="AlunoId" ColumnName="AlunoId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

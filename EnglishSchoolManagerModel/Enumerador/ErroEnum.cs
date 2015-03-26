@@ -40,5 +40,13 @@ namespace EnglishSchoolManagerModel.Enumerador
         Escola_AulaRN_ValidarSalvar_HorarioJaExistete = 13,
         [System.ComponentModel.Description("Aula informada não existe")]
         Escola_AulaRN_ValidarSalvar_AulaNaoExistente = 14,
+        [System.ComponentModel.Description("O pagamento não foi informado")]
+        Pagamento_PagamentoRN_ValidarSalvar_PagamentoNULL = 15,
+        [System.ComponentModel.Description("Não é permitido alterar um pagamento")]
+        Pagamento_PagamentoRN_ValidarSalvar_NaoPermitidoAlterarPagamento = 16,
+        [System.ComponentModel.Description("O usuário não tem acesso para executar esta ação")]
+        Pagamento_PagamentoRN_ValidarSalvar_UsuarioSemAcesso = 17,
+        [System.ComponentModel.Description("Aluno inválido")]
+        Pagamento_PagamentoRN_ValidarSalvar_AlunoInvalido = 18,
     }
 }
